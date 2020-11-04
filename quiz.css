@@ -1,0 +1,63 @@
+.btn-grid {
+  display: block;
+  margin: 20px 20px;
+  gap: 10px;
+  transition-property: width;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  transition-delay: 2s;
+}
+
+.btn {
+  border: 1px solid #e6e6e2ce;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: rgb(31, 27, 27);
+  outline: none;
+}
+
+.btn:hover {
+  border-color: black;
+}
+
+.btn-correct {
+  color: black;
+  background-color: #228B22;
+}
+
+.btn-wrong {
+  background-color: #A52A2A;
+}
+
+#quiz {
+  position: absolute;
+  top: 150px;
+  left: 10%;
+  width: 80%;
+
+  background-color: #F4A460;
+  border-radius: 10px;
+  padding: 10px;
+  
+  margin: auto;
+}
+
+#progress, #question {
+  text-align: center;
+}
+
+.prev-btn, .next-btn {
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+.controls {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}

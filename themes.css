@@ -1,0 +1,102 @@
+/* @media screen 
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+  .toggler {
+    box-sizing: content-box;
+    width: 20%;
+    padding: 3px 3px;
+  }
+} */
+
+.toggler {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  padding: 5px;
+
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  cursor: pointer;
+
+  transform: scale(1);
+}
+
+.container {
+  background-color: var(--accent-color);
+  color: var(--button-text-color);
+  box-shadow: 0 0 15px 3px rgb(31, 27, 27);
+
+  transition: var(--transition-delay);
+}
+
+.toggler:hover,
+.toggler:focus {
+  transform: scale(1.1);
+  
+}
+
+.sunMoonContainer {
+  --rotation: 0;
+  pointer-events: none;
+
+  /* display: block; */
+  justify-content: center;
+  text-align: center;
+  height: 200vmin;
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  transform: rotate(calc(var(--rotation) * 1deg));
+  transition: transform var(--transition-delay);
+}
+
+.sun {
+  top: 3%
+}
+
+.moon {
+  bottom: 3%;
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.sun,
+.moon {
+  position: absolute;
+  transition: opacity, fill var(--transition-delay);
+  fill: var(--accent-color);
+}
+
+.dark .moon {
+  opacity: 1;
+}
+
+.dark .sun {
+  opacity: 0;
+}
+
+.dark .sunMoonContainer {
+  --rotation: 180;
+}
+
+body {
+  --accent-color: #f37e12;
+  --button-text-color: var(--background-color);
+  --transition-delay: 1s;
+  --background-color: #ecece5;
+
+  transition: var(--transition-delay);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.dark {
+ --accent-color: #f3d812;
+ --background-color: #333;
+ --text-color: white;
+}
