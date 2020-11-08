@@ -1,49 +1,28 @@
-/* @media screen 
-and (min-device-width: 320px)
-and (max-device-width: 480px) {
-  .toggler {
-    box-sizing: content-box;
-    width: 20%;
-    padding: 3px 3px;
-  }
-} */
-
 .toggler {
   position: absolute;
   left: 5%;
   top: 10%;
   padding: 5px;
 
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   border: none;
   cursor: pointer;
 
+  background-color: transparent;
+  color: inherit;
+
   transform: scale(1);
-}
-
-.container {
-  background-color: var(--accent-color);
-  color: var(--button-text-color);
-  box-shadow: 0 0 15px 3px rgb(31, 27, 27);
-
-  transition: var(--transition-delay);
 }
 
 .toggler:hover,
 .toggler:focus {
   transform: scale(1.1);
-  
 }
 
 .sunMoonContainer {
   --rotation: 0;
   pointer-events: none;
 
-  /* display: block; */
+  display: block;
   justify-content: center;
   text-align: center;
   height: 200vmin;
@@ -69,7 +48,7 @@ and (max-device-width: 480px) {
 .moon {
   position: absolute;
   transition: opacity, fill var(--transition-delay);
-  fill: var(--accent-color);
+  fill: var(--sunMoon-color);
 }
 
 .dark .moon {
@@ -80,13 +59,12 @@ and (max-device-width: 480px) {
   opacity: 0;
 }
 
-.dark .sunMoonContainer {
+.sunMoonContainer .dark {
   --rotation: 180;
 }
 
 body {
-  --accent-color: #f37e12;
-  --button-text-color: var(--background-color);
+  --sunMoon-color: #f37e12;
   --transition-delay: 1s;
   --background-color: #ecece5;
 
@@ -96,7 +74,7 @@ body {
 }
 
 body.dark {
- --accent-color: #f3d812;
+ --sunMoon-color: #f3d812;
  --background-color: #333;
  --text-color: white;
 }
