@@ -1,8 +1,4 @@
-function Questions(question, answers, correctAnswer) {
-  this.question = question;
-  this.answers = answers;
-  this.correctAnswer = correctAnswer;
-}
+import { Questions } from './questions.js';
 
 const questions = [new Questions('What is 4 * 2?', ['4', '8', '12'], '8'),
   new Questions('What is 2 * 2?', ['4', '8', '6'], '4'),
@@ -12,4 +8,4 @@ const questions = [new Questions('What is 4 * 2?', ['4', '8', '12'], '8'),
 
 const availableQuestions = [...questions];
 
-export { Questions, availableQuestions, questions };
+export { questions, availableQuestions };

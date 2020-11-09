@@ -3,8 +3,8 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-use-before-define */
 
-import { availableQuestions, questions } from './questions.js';
-import { setRandomQuestion, showProgress, quizDisplay } from './quizDisplay.js';
+import { availableQuestions, questions } from './questions/defaultQuestions.js';
+import { setRandomQuestion, showProgress, quizDisplay } from './quizDisplay/quizDisplay.js';
 
 const start = document.getElementById('linkToDefQ');
 export const nextButton = document.getElementById('next-btn');
