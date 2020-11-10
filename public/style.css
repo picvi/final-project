@@ -19,11 +19,6 @@ and (max-device-width: 550px) {
     max-width: 200px;
     height: 15px;
   }
-  /* li button {
-    display: block;
-    float: left;
-    margin: 2px;
-  } */
 }
 
 @media screen 
@@ -87,7 +82,7 @@ cite {
 #form {
   margin: 75px 20px;
   float: right;
-
+  clear: both;
   font-size: 20px;
 
   width: 500px;

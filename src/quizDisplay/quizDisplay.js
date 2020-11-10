@@ -1,8 +1,6 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-use-before-define */
-// eslint-disable-next-line import/extensions
 
 const answersElements = document.getElementById('answers');
 const questionArea = document.getElementById('question');
@@ -57,6 +55,7 @@ function showAnswers(currentQuestion) {
         score;
       }
       scoreText.innerHTML = `Score ${score}`;
+      localStorage.setItem('mostRecentScore', score);
     });
   });
 }
@@ -65,10 +64,8 @@ function quizDisplay(listOfQuestions, constantQuestions) {
   if (currentQuestionIndex === constantQuestions.length) {
     // show results
     document.getElementById('quiz').style.display = 'none';
-    const resultDisplay = document.createElement('blockquote');
-    resultDisplay.innerText = `Your result is ${score}`;
-    resultDisplay.id = 'saying';
-    document.body.append(resultDisplay);
+    document.getElementById('scoreForm').classList.remove('hide');
+    document.getElementById('score').innerText = score;
   } else {
     while (answersElements.firstChild) {
       answersElements.removeChild(answersElements.firstChild);
@@ -77,4 +74,6 @@ function quizDisplay(listOfQuestions, constantQuestions) {
   }
 }
 
-export { setRandomQuestion, quizDisplay, showProgress };
+export {
+  setRandomQuestion, quizDisplay, showProgress, score,
+};

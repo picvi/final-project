@@ -6,6 +6,6 @@ const questions = [new Questions('What is 4 * 2?', ['4', '8', '12'], '8'),
   new Questions('2 * 2 = 4?', ['yes', 'no'], 'yes'),
   new Questions('What is 7 * 2?', ['14', '8', '6'], '14')];
 
-const availableQuestions = [...questions];
+let availableQuestions = [...questions];
 
 export { questions, availableQuestions };

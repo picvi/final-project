@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-expressions */
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-use-before-define */
 
