@@ -55,7 +55,6 @@ function showAnswers(currentQuestion) {
         score;
       }
       scoreText.innerHTML = `Score ${score}`;
-      localStorage.setItem('mostRecentScore', score);
     });
   });
 }
@@ -64,7 +63,7 @@ function quizDisplay(listOfQuestions, constantQuestions) {
   if (currentQuestionIndex === constantQuestions.length) {
     // show results
     document.getElementById('quiz').style.display = 'none';
-    document.getElementById('scoreForm').classList.remove('hide');
+    document.getElementById('container').style.display = 'flex';
     document.getElementById('score').innerText = score;
   } else {
     while (answersElements.firstChild) {
@@ -72,6 +71,7 @@ function quizDisplay(listOfQuestions, constantQuestions) {
     }
     setRandomQuestion(listOfQuestions);
   }
+  localStorage.setItem('mostRecentScore', score);
 }
 
 export {

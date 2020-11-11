@@ -1,32 +1,29 @@
 const saveScore = document.getElementById('saveScore');
 const userName = document.getElementById('userName');
-const mostRecentScore = localStorage.getItem('mostRecentScore');
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-userName.addEventListener('keyup', () => {
-  saveScore.disabled = !userName.value;
-});
-
 saveScore.addEventListener('click', (e) => {
   e.preventDefault();
-
+  document.getElementById('scoreForm').style.display = 'none';
+  const mostRecentScore = localStorage.getItem('mostRecentScore');
   const scoreInfo = {
     score: mostRecentScore,
     name: userName.value,
   };
 
+  console.log(scoreInfo);
+
   highScores.push(scoreInfo);
-  highScores.sort((a, b) => b.score - a.score);
+  highScores.sort((a, b) => a.score > b.score ? 1 : -1)
+
   highScores.splice(3);
 
   localStorage.setItem('highScores', JSON.stringify(highScores));
 
-  document.getElementById('scoreForm').style.display = 'none';
-
-  highScores.map((score) => {
+  highScores.map((userScore) => {
     const scoreDisplay = document.createElement('h4');
-    scoreDisplay.innerHTML = `${score.name}: ${score.score}`;
+    scoreDisplay.innerHTML = `${userScore.name}: ${userScore.score}`;
     document.getElementById('topThreeScores').append(scoreDisplay);
   });
 });
