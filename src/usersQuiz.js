@@ -10,8 +10,8 @@ addUserQuestions.addEventListener('click', (e) => {
   e.preventDefault();
   const form = document.forms.questionForm;
   const question = form.elements.question.value;
-  const answers = form.elements.answers.value;
-  const correctAnswer = form.elements.correctAnswer.value;
+  const answers = form.elements.answers.value.toLowerCase();
+  const correctAnswer = form.elements.correctAnswer.value.toLowerCase();
 
   userQuestions.add(question, answers, correctAnswer);
   availableUsersQuestions = [...userQuestions.read()];

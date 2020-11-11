@@ -10,6 +10,7 @@
   margin-top: 10px;
   padding: 5px 10px;
   color: rgb(31, 27, 27);
+  background-color: rgba(160, 174, 182, 0.178);
   outline: none;
 }
 
@@ -32,7 +33,7 @@
   left: 10%;
   width: 80%;
 
-  background-color: #F4A460;
+  background-color: #ffa82d;
   border-radius: 10px;
   padding: 10px;
   
@@ -69,7 +70,7 @@
   align-items: center;
 }
 
-#saveScore {
+#saveScore, #goHome {
   margin-bottom: 1rem;
   width: 19rem;
   padding: 0.7rem;

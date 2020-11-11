@@ -39,16 +39,16 @@
 					<ul>
 						<li>
 							<label for="question">Question: </label>
-							<input type="text" name="question" required>
+							<input type="text" name="question" required placeholder="Question">
 						</li>
 						<li>
 							<label for="answer">Answers: </label>
-							<input type="text" name="answers">
+							<input type="text" name="answers" placeholder="Answers" title="Answers should be separated by a comma">
 						</li>
 				
 						<li id="correctAnswer">
 							<label for="correctAnswer">Correct Answer: </label>
-							<input type="text" name="correctAnswer">
+							<input type="text" name="correctAnswer" placeholder="Correct Answer">
 						</li>
             <div id="buttons">
               <li>
@@ -83,6 +83,7 @@
           <h3 id="score"></h3>
           <input type="text" name="userName" id="userName" placeholder="userName">
           <button id="saveScore" class="next-btn">Save</button>
+          <button id="goHome" class="next-btn">Go Home</button>
         </div>
         <div id="topThreeScores"></div>
       </div>

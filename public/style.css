@@ -114,7 +114,15 @@ input {
   margin: 20px;
   text-align: justify;
   cursor: pointer;
-  
+}
+
+#linkToDefQ:hover, #createQuiz:hover, #addQuestion:hover, #reset:hover {
+  transform: scale(1.1);
+  transition-duration: 2s;
+}
+
+::placeholder {
+  opacity: 0.5;
 }
 
 form {

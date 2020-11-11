@@ -5,7 +5,8 @@ const userQuestions = {
   userQuestions: [],
 
   finder(question) {
-    const item = this.userQuestions.find((questionElement) => questionElement.question === question);
+    const item = this.userQuestions
+      .find((questionElement) => questionElement.question === question);
     return item;
   },
 
@@ -16,14 +17,14 @@ const userQuestions = {
   add(question, answers, correctAnswer) {
     const reg = /\s*,\s*/;
     const answersArray = answers.split(reg);
-    const correctAns = answersArray.find((answer) => answer === correctAnswer);
+    const correctAnsChecker = answersArray.find((answer) => answer === correctAnswer);
 
     if (answersArray.length < 2) {
-      alert('should be more than 1 answer');
-    } else if (correctAns === undefined) {
+      alert('You should have more than 1 answer');
+    } else if (correctAnsChecker === undefined) {
       alert('There is no correct answer');
     } else if (this.finder(question) !== undefined) {
-      alert('You have this question');
+      alert('You already have this question');
     } else {
       this.userQuestions.push(new Questions(question, answersArray, correctAnswer));
     }
